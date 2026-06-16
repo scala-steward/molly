@@ -3,12 +3,12 @@ package molly.core
 import cats.effect.kernel.Resource
 import cats.effect.kernel.Sync
 import com.dimafeng.testcontainers.MongoDBContainer
-import weaver.MutableFSuite
+import weaver.FSuite
 
 /** This integrates weaver-test with testcontainers-scala.
   */
 trait TestContainerForAll[F[_]](using f: Sync[F]):
-    self: MutableFSuite[F] =>
+    self: FSuite[F] =>
 
     val containerDef: MongoDBContainer.Def
 
